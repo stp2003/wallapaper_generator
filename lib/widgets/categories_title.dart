@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CategoriesTitle extends StatelessWidget {
-  const CategoriesTitle({
+class CategoriesTile extends StatelessWidget {
+  const CategoriesTile({
     Key? key,
     required this.imageUrl,
     required this.title,
@@ -13,14 +13,29 @@ class CategoriesTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(right: 10.0),
       child: Stack(
         children: [
-          Container(
-            child: Image.network(imageUrl),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(9.0),
+            child: Image.network(
+              imageUrl,
+              height: 50.0,
+              width: 100.0,
+              fit: BoxFit.cover,
+            ),
           ),
           Container(
+            alignment: Alignment.center,
+            height: 50.0,
+            width: 100.0,
+            color: Colors.black26,
             child: Text(
               title,
+              style: const TextStyle(
+                fontFamily: 'poppins_bold',
+                fontSize: 15.0,
+              ),
             ),
           ),
         ],

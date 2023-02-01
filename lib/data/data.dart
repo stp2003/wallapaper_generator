@@ -1,4 +1,7 @@
+import '../constants/api_key.dart';
 import '../models/category_models.dart';
+
+String apiKEY = apiKey;
 
 List<CategoryModel> getCategories() {
   List<CategoryModel> categories = [];
